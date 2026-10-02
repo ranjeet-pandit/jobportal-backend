@@ -93,9 +93,8 @@ public class Job extends BaseEntity {
     private String benefits;
 
     @NotNull
-    @ColumnDefault("CURRENT_TIMESTAMP")
     @Column(name = "posted_date", nullable = false)
-    private Instant postedDate;
+    private Instant postedDate = Instant.now();
 
     @Column(name = "application_deadline")
     private Instant applicationDeadline;
@@ -121,6 +120,5 @@ public class Job extends BaseEntity {
     @ColumnDefault("'ACTIVE'")
     @Column(name = "status", nullable = false, length = 20)
     private String status;
-
 
 }
